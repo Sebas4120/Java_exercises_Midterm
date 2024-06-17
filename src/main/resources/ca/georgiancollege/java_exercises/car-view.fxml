@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="620.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitPane dividerPositions="0.5" layoutY="-15.0" prefHeight="633.0" prefWidth="600.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="274.0" prefWidth="295.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="34.0" layoutY="27.0" prefHeight="49.0" prefWidth="227.0" text="Create a Car!" textAlignment="CENTER">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="error" alignment="CENTER" contentDisplay="CENTER" layoutX="4.0" layoutY="84.0" prefHeight="20.0" prefWidth="274.0" text="Here goes the error message" textAlignment="CENTER" textFill="RED">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="35.0" layoutY="254.0" prefHeight="17.0" prefWidth="35.0" text="Color" />
+                  <TextField fx:id="color" layoutX="74.0" layoutY="250.0" />
+                  <Label layoutX="34.0" layoutY="292.0" prefHeight="17.0" prefWidth="35.0" text="Model" />
+                  <TextField fx:id="model" layoutX="73.0" layoutY="288.0" />
+                  <Label layoutX="34.0" layoutY="331.0" prefHeight="17.0" prefWidth="35.0" text="Make" />
+                  <TextField fx:id="make" layoutX="73.0" layoutY="327.0" />
+                  <Label layoutX="35.0" layoutY="369.0" prefHeight="17.0" prefWidth="35.0" text="Doors" />
+                  <TextField fx:id="doors" layoutX="74.0" layoutY="365.0" />
+                  <Label layoutX="34.0" layoutY="406.0" prefHeight="17.0" prefWidth="35.0" text="Years" />
+                  <TextField fx:id="years" layoutX="73.0" layoutY="402.0" />
+                  <Button fx:id="submit" layoutX="114.0" layoutY="523.0" mnemonicParsing="false" text="Submit" />
+                  <ImageView fx:id="mainPhoto" fitHeight="109.0" fitWidth="142.0" layoutX="70.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@photos/civic.jpg" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="arrowLeft" layoutX="67.0" layoutY="212.0" mnemonicParsing="false" text="&lt;" />
+                  <Button fx:id="arrow" layoutX="179.0" layoutY="212.0" mnemonicParsing="false" text="&gt;" />
+                  <Label layoutX="17.0" layoutY="151.0" prefHeight="17.0" prefWidth="35.0" text="Image" />
+                  <Slider fx:id="slider" layoutX="109.0" layoutY="457.0" prefHeight="35.0" prefWidth="142.0" showTickLabels="true" showTickMarks="true" />
+                  <Label layoutX="61.0" layoutY="466.0" prefHeight="17.0" prefWidth="35.0" text="KM" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="467.0" prefWidth="257.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="34.0" layoutY="29.0" prefHeight="25.0" prefWidth="227.0" text="Output" textAlignment="CENTER">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="output" alignment="TOP_LEFT" layoutX="53.0" layoutY="230.0" prefHeight="183.0" prefWidth="190.0" style="-fx-border-color: black; -fx-background-color: skyblue;" text="Label" textAlignment="CENTER" textOverrun="CLIP" />
+<!--                  <ComboBox fx:id="comboBox" layoutX="73.0" layoutY="343.0" onAction="#onChange" prefWidth="150.0" />-->
+                  <Label layoutX="112.0" layoutY="513.0" text="Choose a car:" />
+                  <ComboBox fx:id="comboBox" layoutX="73.0" layoutY="530.0" onAction="#onChange" prefWidth="150.0" />
+                  <Button fx:id="edit" layoutX="47.0" layoutY="436.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="62.0" text="Edit" />
+                  <Button fx:id="delete" layoutX="183.0" layoutY="436.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="62.0" text="Delete" />
+                  <ImageView fx:id="rightPhoto" fitHeight="101.0" fitWidth="190.0" layoutX="47.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@photos/default.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

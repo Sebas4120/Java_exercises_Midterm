@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bde8384f-abf8-4826-8aa1-2495319cbf45" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Annonymous_Inner_Class/Controller_Inner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Annonymous_Inner_Class/InnerAplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Annonymous_Inner_Class/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Annonymous_Inner_Class/Welcome.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/HackerRank/LetsDoIt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Lambda_expressions/LambdaExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Lambda_expressions/Lambda_Parameters.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Practica_sem2/Exercises.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ca/georgiancollege/java_exercises/BaseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ca/georgiancollege/java_exercises/BaseModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ca/georgiancollege/java_exercises/CarApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ca/georgiancollege/java_exercises/CarController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ca/georgiancollege/java_exercises/DBUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Annonymous_Inner_Class/Annonymous_Inner_Class.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ca/georgiancollege/java_exercises/car-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ca/georgiancollege/java_exercises/hello-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ca/georgiancollege/java_exercises/photos/civic.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ca/georgiancollege/java_exercises/photos/default.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ca/georgiancollege/java_exercises/photos/ferrari.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ca/georgiancollege/java_exercises/photos/skyline.jpg" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="JavaFXApplication" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2gZ2Ol9Ty6xEvU6gFvx32pxqByX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.CarApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Exercises.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.InnerAplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LambdaExample.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LetsDoIt.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sebas/IdeaProjects/Java_exercises/src/main/resources/ca/georgiancollege/java_exercises/photos&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;settings.editor.splitter.proportion&quot;: &quot;0.256182&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\sebas\IdeaProjects\Java_exercises\src\main\resources\ca\georgiancollege\java_exercises\photos" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sebas\IdeaProjects\Java_exercises\src\main\resources\Annonymous_Inner_Class" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="ca.georgiancollege.java_exercises" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17890.1" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17890.1" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bde8384f-abf8-4826-8aa1-2495319cbf45" name="Changes" comment="" />
+      <created>1715890750891</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1715890750891</updated>
+      <workItem from="1715890752040" duration="3576000" />
+      <workItem from="1716046821847" duration="2491000" />
+      <workItem from="1716217724675" duration="5453000" />
+      <workItem from="1716318811618" duration="171000" />
+      <workItem from="1716855489981" duration="2627000" />
+      <workItem from="1716923370223" duration="1195000" />
+      <workItem from="1717159323728" duration="1251000" />
+      <workItem from="1717202332882" duration="10000" />
+      <workItem from="1717203831916" duration="7405000" />
+      <workItem from="1717457269339" duration="2334000" />
+      <workItem from="1717537447266" duration="277000" />
+      <workItem from="1717554869506" duration="5837000" />
+      <workItem from="1717847027794" duration="445000" />
+      <workItem from="1717847490086" duration="4212000" />
+      <workItem from="1717851790653" duration="107000" />
+      <workItem from="1717852128140" duration="311000" />
+      <workItem from="1717852477581" duration="4028000" />
+      <workItem from="1717895548214" duration="94000" />
+      <workItem from="1717895795384" duration="3000" />
+      <workItem from="1717895884338" duration="148000" />
+      <workItem from="1718543895189" duration="13877000" />
+      <workItem from="1718647570600" duration="3000" />
+      <workItem from="1718647647924" duration="2872000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
