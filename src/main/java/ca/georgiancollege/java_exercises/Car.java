@@ -1,5 +1,6 @@
 package ca.georgiancollege.java_exercises;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Objects;
 
@@ -8,12 +9,19 @@ public class Car extends BaseModel{
     private String model, color, make,photo;
     private int doors, year;
 
+    private String carDataByIndex;
+
     private float engine;
 
     private double km;
 
     public Car(){
 
+    }
+
+    public Car(String model, String color) {
+        setModel(model);
+        setColor(color);
     }
 
     public void Validation(String title, String label){
@@ -147,8 +155,26 @@ public class Car extends BaseModel{
         preparedStatement.execute();
     }
 
-    //Tener un historial de autos que se han creado en el combobox
 
+    public String getCarDataByIndex (int index) throws SQLException {
+        String query = "Select * from carData where id = ?";
+
+        preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setInt(1, index);
+
+        ResultSet resultSet = preparedStatement.executeQuery();
+
+        if(resultSet.next()){
+            model = resultSet.getString("model");
+            color = resultSet.getString("color");
+            make = resultSet.getString("make");
+            doors = resultSet.getInt("doors");
+            year = resultSet.getInt("year");
+            km = resultSet.getDouble("km");
+        }
+        String result = model + "\n" + color + "\n" + make + "\n" + doors + "\n" + year + "\n" + km;
+        return result;
+    }
 
     @Override
     public String toString() {

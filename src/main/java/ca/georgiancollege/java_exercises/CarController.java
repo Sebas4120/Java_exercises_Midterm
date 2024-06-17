@@ -11,6 +11,8 @@ import java.nio.file.Path;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CarController extends BaseController{
 
@@ -76,7 +78,10 @@ public class CarController extends BaseController{
     public void initialize() throws SQLException {
         output.setText("");
         error.setText("");
-        addingToComboBox();
+
+        historialDataToComboBox();
+
+//        comboBox.getItems().add("Select a car");
 
         submit.setOnAction(event -> {
             try {
@@ -89,7 +94,7 @@ public class CarController extends BaseController{
 
                 output.setText(ford1.toString());
 
-
+                addCarToComboBox(ford1);
 
                 //Estableciendo la imagen de la derecha segun la seleccionada por el usuario
                 ford1.setPhoto(photoList.get(photoListIndex));
@@ -110,7 +115,7 @@ public class CarController extends BaseController{
                 // combobox
                 carsList.add(ford1);
                 //Aqui abajooo
-                addingToComboBox();
+
 
                 displayCars();
 
@@ -199,6 +204,39 @@ public class CarController extends BaseController{
             );
         });
 
+        comboBox.setOnAction(event -> {
+            System.out.println("On Action");
+
+            int index = comboBox.getSelectionModel().getSelectedIndex();
+            // Crear una instancia de Car y obtener los datos por índice
+            Car car = new Car();
+
+            try{
+                String carData = car.getCarDataByIndex(index + 1);
+                output.setText(carData);
+
+//                // Asignar los valores obtenidos a los campos de texto
+//                color.setText(car.getColor());
+//                model.setText(car.getModel());
+//                make.setText(car.getMake());
+//                doors.setText(car.getDoors() + "");
+//                years.setText(car.getYear() + "");
+//                slider.setValue(car.getKm());
+
+                // Actualizar la imagen principal
+                mainPhoto.setImage(
+                        new Image(String.valueOf(getClass().getResource(car.getPhoto()))
+                        )
+                );
+
+            }catch(SQLException e){
+                e.printStackTrace();
+            }
+
+
+
+        });
+
 
 
     }
@@ -224,18 +262,33 @@ public class CarController extends BaseController{
 
     }
 
-    public void addingToComboBox() throws SQLException {
+    public void historialDataToComboBox() throws SQLException {
+
+        List <Car> carList = new ArrayList<>();
 
         String sql = "select COLOR,MODEL from carData ";
 
         ResultSet resultSet = new BaseModel().queryResult(sql);
 
         while (resultSet.next()){
+            String color = resultSet.getString("COLOR");
+            String model = resultSet.getString("MODEL");
+
+            Car car = new Car(model,color);
             comboBox.getItems().add((resultSet.getString("COLOR")) + " : "
                     + (resultSet.getString("MODEL")));
+
         }
 
     }
+
+    private void addCarToComboBox(Car car) {
+        comboBox.getItems().add(car.getColor() + " : " + car.getModel());
+    }
+
+
+
+
 
 
 
