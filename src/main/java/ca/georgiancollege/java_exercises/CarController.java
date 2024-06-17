@@ -8,6 +8,7 @@ import javafx.scene.image.ImageView;
 
 import java.io.File;
 import java.nio.file.Path;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -72,10 +73,10 @@ public class CarController extends BaseController{
     }
 
     @FXML
-    public void initialize() {
+    public void initialize() throws SQLException {
         output.setText("");
         error.setText("");
-
+        addingToComboBox();
 
         submit.setOnAction(event -> {
             try {
@@ -109,7 +110,7 @@ public class CarController extends BaseController{
                 // combobox
                 carsList.add(ford1);
                 //Aqui abajooo
-                addingToComboBox(ford1);
+                addingToComboBox();
 
                 displayCars();
 
@@ -198,6 +199,8 @@ public class CarController extends BaseController{
             );
         });
 
+
+
     }
 
 
@@ -221,8 +224,17 @@ public class CarController extends BaseController{
 
     }
 
-    public void addingToComboBox(Car car){
-        comboBox.getItems().add(car.getMake() + " -> " + car.getModel());
+    public void addingToComboBox() throws SQLException {
+
+        String sql = "select COLOR,MODEL from carData ";
+
+        ResultSet resultSet = new BaseModel().queryResult(sql);
+
+        while (resultSet.next()){
+            comboBox.getItems().add((resultSet.getString("COLOR")) + " : "
+                    + (resultSet.getString("MODEL")));
+        }
+
     }
 
 

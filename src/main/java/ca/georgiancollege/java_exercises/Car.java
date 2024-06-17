@@ -147,6 +147,9 @@ public class Car extends BaseModel{
         preparedStatement.execute();
     }
 
+    //Tener un historial de autos que se han creado en el combobox
+
+
     @Override
     public String toString() {
         return "Car{" +
