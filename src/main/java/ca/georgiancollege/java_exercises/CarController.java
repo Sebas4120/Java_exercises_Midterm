@@ -10,9 +10,12 @@ import java.io.File;
 import java.nio.file.Path;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.ArrayList;
 import java.util.List;
+
+import static ca.georgiancollege.java_exercises.Car.historialDataToComboBox;
 
 public class CarController extends BaseController{
 
@@ -42,6 +45,10 @@ public class CarController extends BaseController{
 
     @FXML
     private Button submit;
+
+    @FXML
+    private Button update;
+
 
 
     @FXML
@@ -79,7 +86,7 @@ public class CarController extends BaseController{
         output.setText("");
         error.setText("");
 
-        historialDataToComboBox();
+        historialDataToComboBox(comboBox);
 
 //        comboBox.getItems().add("Select a car");
 
@@ -99,10 +106,16 @@ public class CarController extends BaseController{
                 //Estableciendo la imagen de la derecha segun la seleccionada por el usuario
                 ford1.setPhoto(photoList.get(photoListIndex));
 
-                rightPhoto.setImage(
-                        new Image(String.valueOf(getClass().getResource(ford1.getPhoto()))
-                        )
-                );
+                Image image = new Image(String.valueOf(getClass().getResource(ford1.getPhoto())));
+                if (image.isError()) {
+                    error.setText("Image not found.");
+                } else {
+                    rightPhoto.setImage(image);
+                }
+//                rightPhoto.setImage(
+//                        new Image(String.valueOf(getClass().getResource(ford1.getPhoto()))
+//                        )
+//                );
 
                 error.setText("");
                 model.setText("");
@@ -187,21 +200,62 @@ public class CarController extends BaseController{
         });
 
         edit.setOnAction(event -> {
-          int index = comboBox.getSelectionModel().getSelectedIndex();
+            int indexMain = comboBox.getSelectionModel().getSelectedIndex();
 
-            Car selected = carsList.get(index);
+            Car car = new Car();
 
-            color.setText(selected.getColor());
-            model.setText(selected.getModel());
-            make.setText(selected.getMake());
-            doors.setText(selected.getDoors() + "");
-            years.setText(selected.getYear() + "");
-            slider.setValue(selected.getKm());
+            try {
+                String carData = car.getCarDataByIndex(indexMain + 1);
 
-            mainPhoto.setImage(
-                    new Image(String.valueOf(getClass().getResource(selected.getPhoto()))
-                    )
-            );
+                color.setText(car.getColor());
+                model.setText(car.getModel());
+                make.setText(car.getMake());
+                doors.setText(String.valueOf(car.getDoors()));
+                years.setText(String.valueOf(car.getYear()));
+                slider.setValue(car.getKm());
+
+
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
+
+//            color.setText(selected.getColor());
+//            model.setText(selected.getModel());
+//            make.setText(selected.getMake());
+//            doors.setText(String.valueOf(selected.getDoors()));
+//            years.setText(String.valueOf(selected.getYear()));
+//            slider.setValue(selected.getKm());
+//
+//            Image image = new Image(String.valueOf(getClass().getResource(selected.getPhoto())));
+//            if (image.isError()) {
+//                error.setText("Image not found.");
+//            } else {
+//                mainPhoto.setImage(image);
+//            }
+        });
+
+        update.setOnAction(event -> {
+            // Obtener el índice seleccionado
+            int index = comboBox.getSelectionModel().getSelectedIndex();
+            // Obtener los nuevos valores
+            String newColor = color.getText();
+            String newModel = model.getText();
+            String newMake = make.getText();
+            int newDoors = Integer.parseInt(doors.getText());
+            int newYear = Integer.parseInt(years.getText());
+            double newKm = slider.getValue();
+            // Crear una instancia de Car y actualizar la fila
+            Car car = new Car();
+            // Actualizar la fila
+            try {
+                // Actualizar la fila
+               car.updateRow(newModel,newColor,newMake, newDoors, newYear, newKm, index + 1);
+//
+            } catch (SQLException e) {
+                    throw new RuntimeException(e);
+            };
+
         });
 
         comboBox.setOnAction(event -> {
@@ -215,14 +269,6 @@ public class CarController extends BaseController{
                 String carData = car.getCarDataByIndex(index + 1);
                 output.setText(carData);
 
-//                // Asignar los valores obtenidos a los campos de texto
-//                color.setText(car.getColor());
-//                model.setText(car.getModel());
-//                make.setText(car.getMake());
-//                doors.setText(car.getDoors() + "");
-//                years.setText(car.getYear() + "");
-//                slider.setValue(car.getKm());
-
                 // Actualizar la imagen principal
                 mainPhoto.setImage(
                         new Image(String.valueOf(getClass().getResource(car.getPhoto()))
@@ -232,27 +278,11 @@ public class CarController extends BaseController{
             }catch(SQLException e){
                 e.printStackTrace();
             }
-
-
-
         });
 
 
 
     }
-
-
-
-    @FXML
-    void onChange(ActionEvent event) {
-        int index = comboBox.getSelectionModel().getSelectedIndex();
-
-        output.setText(carsList.get(index).toString());
-
-        System.out.println("On Change");
-    }
-
-
 
     public void displayCars(){
         for (Car c : carsList){
@@ -262,28 +292,14 @@ public class CarController extends BaseController{
 
     }
 
-    public void historialDataToComboBox() throws SQLException {
 
-        List <Car> carList = new ArrayList<>();
-
-        String sql = "select COLOR,MODEL from carData ";
-
-        ResultSet resultSet = new BaseModel().queryResult(sql);
-
-        while (resultSet.next()){
-            String color = resultSet.getString("COLOR");
-            String model = resultSet.getString("MODEL");
-
-            Car car = new Car(model,color);
-            comboBox.getItems().add((resultSet.getString("COLOR")) + " : "
-                    + (resultSet.getString("MODEL")));
-
-        }
-
-    }
 
     private void addCarToComboBox(Car car) {
         comboBox.getItems().add(car.getColor() + " : " + car.getModel());
+    }
+
+    private void updateComboBoxItem(int index, Car car) {
+        comboBox.getItems().set(index, car.getColor() + " : " + car.getModel());
     }
 
 

@@ -1,5 +1,7 @@
 package ca.georgiancollege.java_exercises;
 
+import javafx.scene.control.ComboBox;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Objects;
@@ -175,6 +177,48 @@ public class Car extends BaseModel{
         String result = model + "\n" + color + "\n" + make + "\n" + doors + "\n" + year + "\n" + km;
         return result;
     }
+
+    public void updateRow(String model, String color, String make, int doors, int year,
+                          double km,
+                          int id) throws SQLException {
+        // Construir la consulta SQL correcta con las columnas especificadas
+        String query = "UPDATE carData SET model = ?, color = ?, make = ?, doors = ?, year = ?, " +
+                "km = ? WHERE id = ?";
+
+        // Preparar la declaración con parámetros
+        preparedStatement = connection.prepareStatement(query);
+
+        // Establecer los valores de los parámetros
+        preparedStatement.setString(1, model);
+        preparedStatement.setString(2, color);
+        preparedStatement.setString(3, make);
+        preparedStatement.setInt(4, doors);
+        preparedStatement.setInt(5, year);
+        preparedStatement.setDouble(6, km);
+        preparedStatement.setInt(7, id);
+
+        // Ejecutar la actualización
+        preparedStatement.executeUpdate();
+    }
+
+    public static void historialDataToComboBox(ComboBox<String> comboBox) throws SQLException {
+
+        String sql = "select COLOR,MODEL from carData ";
+
+        ResultSet resultSet = new BaseModel().queryResult(sql);
+
+        while (resultSet.next()){
+            String color = resultSet.getString("COLOR");
+            String model = resultSet.getString("MODEL");
+
+            Car car = new Car(model,color);
+            comboBox.getItems().add((resultSet.getString("COLOR")) + " : "
+                    + (resultSet.getString("MODEL")));
+
+        }
+
+    }
+
 
     @Override
     public String toString() {
